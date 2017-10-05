@@ -17,8 +17,8 @@
 
 set -e
 
-DEVICE=tenshi
-VENDOR=bq
+DEVICE=lv517
+VENDOR=lge
 
 INITIAL_COPYRIGHT_YEAR=2017
 

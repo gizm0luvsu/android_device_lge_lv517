@@ -19,28 +19,28 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from tenshi device
-$(call inherit-product, device/bq/tenshi/device.mk)
+$(call inherit-product, device/lge/lv517/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
-BOARD_VENDOR := bq
-PRODUCT_DEVICE := tenshi
-PRODUCT_NAME := lineage_tenshi
-PRODUCT_BRAND := bq
-PRODUCT_MODEL := Aquaris U Plus
-PRODUCT_MANUFACTURER := bq
+BOARD_VENDOR := lge
+PRODUCT_DEVICE := lv517
+PRODUCT_NAME := lineage_lv517
+PRODUCT_BRAND := lge
+PRODUCT_MODEL := K20 Plus
+PRODUCT_MANUFACTURER := lge
 
 # Set product device & name
 PRODUCT_BUILD_PROP_OVERRIDES += \
-   PRODUCT_NAME=tenshi
+   PRODUCT_NAME=lge
 
 # Overlays (inherit after vendor/cm to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_GMS_CLIENTID_BASE := android-bq
+PRODUCT_GMS_CLIENTID_BASE := android-lge
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=bq/tenshi/tenshi:7.1.1/NMF26F/1504190836:user/release-keys \
-    PRIVATE_BUILD_DESC="tenshi-user 7.1.1 NMF26F 2.3.3_20170831-1536 release-keys"
+    BUILD_FINGERPRINT=MetroPCS/lv517_mpcs_us/lv517:7.0/NRD90U/17075180090e7:user/release-keys \
+    PRIVATE_BUILD_DESC="lv517_mpcs_us-user 7.0 NRD90U 17075180090e7 release-keys"

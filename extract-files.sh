@@ -17,8 +17,8 @@
 
 set -e
 
-DEVICE=tenshi
-VENDOR=bq
+DEVICE=lv517
+VENDOR=lge
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

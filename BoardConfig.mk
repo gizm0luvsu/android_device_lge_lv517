@@ -15,16 +15,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/bq/tenshi
+LOCAL_PATH := device/lge/lv517
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := Aquaris_U_Plus,tenshi
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno308
 
 # Architecture
 TARGET_ARCH := arm
@@ -38,16 +35,16 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8937
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.hardware=lv517 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
-TARGET_KERNEL_CONFIG := lineage_tenshi_defconfig
-TARGET_KERNEL_SOURCE := kernel/bq/msm8937
+TARGET_KERNEL_CONFIG := fusebox_mpcs_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/lv517
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -117,7 +114,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := device/bq/tenshi/cmhw/src
+BOARD_HARDWARE_CLASS := device/lge/lv517/cmhw/src
 
 # CNE
 BOARD_USES_QCNE := true
@@ -173,16 +170,10 @@ USE_DEVICE_SPECIFIC_LOC_API := true
 TARGET_NO_RPC := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_bqmsm8937
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_RECOVERY_DEVICE_MODULES := libinit_bqmsm8937
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
-
-# Lights
-BOARD_LIGHTS_VARIANT := aw2013
-TARGET_PROVIDES_LIBLIGHT := true
 
 # Media Extensions
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -226,4 +217,4 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/bq/tenshi/BoardConfigVendor.mk
+-include vendor/lge/lv517/BoardConfigVendor.mk
